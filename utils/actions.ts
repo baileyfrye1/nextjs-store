@@ -505,7 +505,7 @@ export const removeCartItemAction = async (formData: FormData) => {
     revalidatePath('/cart');
     return { message: 'Item removed from cart' };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 
@@ -537,7 +537,7 @@ export const updateCartItemAction = async ({
     revalidatePath('/cart');
     return { message: 'Cart updated' };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 

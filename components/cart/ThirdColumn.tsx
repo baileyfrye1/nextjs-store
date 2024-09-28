@@ -7,7 +7,7 @@ import { SubmitButton } from '../form/Buttons';
 import { removeCartItemAction, updateCartItemAction } from '@/utils/actions';
 import { useToast } from '../ui/use-toast';
 
-const ThirdColumn = ({ quantity, id }: { quantity: number; id: string }) => {
+function ThirdColumn({ quantity, id }: { quantity: number; id: string }) {
   const [amount, setAmount] = useState(quantity);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -20,7 +20,7 @@ const ThirdColumn = ({ quantity, id }: { quantity: number; id: string }) => {
       cartItemId: id,
     });
     setAmount(value);
-    toast({ description: result!.message });
+    toast({ description: result.message });
     setIsLoading(false);
   };
 
@@ -38,6 +38,5 @@ const ThirdColumn = ({ quantity, id }: { quantity: number; id: string }) => {
       </FormContainer>
     </div>
   );
-};
-
+}
 export default ThirdColumn;
