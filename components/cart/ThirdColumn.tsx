@@ -20,7 +20,7 @@ const ThirdColumn = ({ quantity, id }: { quantity: number; id: string }) => {
       cartItemId: id,
     });
     setAmount(value);
-    toast({ description: result.message });
+    toast({ description: result!.message });
     setIsLoading(false);
   };
 
