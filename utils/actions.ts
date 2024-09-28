@@ -486,11 +486,15 @@ export const addToCartAction = async (prevState: any, formData: FormData) => {
   return { message: 'Product added to cart' };
 };
 
-export const removeCartItemAction = async (formData: FormData) => {
+export const removeCartItemAction = async (
+  prevState: any,
+  formData: FormData,
+) => {
   const user = await getAuthUser();
 
   try {
     const cartItemId = formData.get('id') as string;
+    console.log(cartItemId);
     const cart = await fetchOrCreateCart({
       userId: user.id,
       errorOnFailure: true,
