@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '../ui/card';
 import Image from 'next/image';
 import FavoriteToggleButton from './FavoriteToggleButton';
+import ProductRating from '../single-product/ProductRating';
 
 const ProductsGrid = ({ products }: { products: Product[] }) => {
   return (
@@ -30,9 +31,14 @@ const ProductsGrid = ({ products }: { products: Product[] }) => {
                   </div>
                   <div className='mt-4 text-center'>
                     <h2 className='text-lg capitalize'>{name}</h2>
-                    <p className='text-muted-foreground mt-2'>
-                      {formattedPrice}
-                    </p>
+                    <div className='flex items-center justify-center mt-2 text-muted-foreground'>
+                      <ProductRating
+                        productId={product.id}
+                        className='mb-0 mt-0'
+                      />
+                      <p className='mx-1'>•</p>
+                      <p>{formattedPrice}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
