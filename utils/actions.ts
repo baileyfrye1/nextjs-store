@@ -320,7 +320,7 @@ export const deleteReviewAction = async (prevState: { reviewId: string }) => {
     revalidatePath('/reviews');
     return { message: 'Review deleted successfully' };
   } catch (error) {
-    renderError(error);
+    return renderError(error);
   }
 };
 export const findExistingReview = async (userId: string, productId: string) => {
