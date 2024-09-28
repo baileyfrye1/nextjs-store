@@ -10,8 +10,7 @@ const CartPage = async () => {
   if (!userId) redirect('/');
   const previousCart = await fetchOrCreateCart({ userId });
   const { currentCart, cartItems } = await updateCart(previousCart);
-  if (cartItems.numItemsInCart === 0)
-    return <SectionTitle text='Your Cart Is Empty' />;
+  if (cartItems.length === 0) return <SectionTitle text='Your Cart Is Empty' />;
 
   return (
     <>
