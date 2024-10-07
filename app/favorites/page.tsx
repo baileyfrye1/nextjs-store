@@ -1,7 +1,15 @@
 import SectionTitle from '@/components/global/SectionTitle';
 import ProductsGrid from '@/components/products/ProductsGrid';
 import { fetchUserFavorites } from '@/utils/actions';
-import { Favorite, Product } from '@prisma/client';
+import { Product } from '@prisma/client';
+
+type Favorite = {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+  clerkId: string;
+  productId: string;
+};
 
 type FavoriteItem = {
   product: Product;
