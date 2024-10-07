@@ -4,7 +4,7 @@ import SelectProductAmount from './SelectProductAmount';
 import { Mode } from './SelectProductAmount';
 import FormContainer from '../form/FormContainer';
 import { SubmitButton } from '../form/Buttons';
-import { addToCartAction } from '@/utils/actions';
+import { addToCartAction } from '^/utils/actions';
 import { useAuth } from '@clerk/nextjs';
 import { ProductSignInButton } from '../form/Buttons';
 import { Button } from '../ui/button';

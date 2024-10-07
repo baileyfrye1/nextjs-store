@@ -4,11 +4,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu';
+} from '^/components/ui/dropdown-menu';
 import { LuAlignLeft } from 'react-icons/lu';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import { links } from '@/utils/links';
+import { links } from '^/utils/links';
 import UserIcon from './UserIcon';
 import SignOutLink from './SignOutLink';
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs';

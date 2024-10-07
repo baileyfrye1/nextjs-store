@@ -1,6 +1,6 @@
-import SectionTitle from '@/components/global/SectionTitle';
-import ProductsGrid from '@/components/products/ProductsGrid';
-import { fetchUserFavorites } from '@/utils/actions';
+import SectionTitle from '../../components/global/SectionTitle';
+import ProductsGrid from '../../components/products/ProductsGrid';
+import { fetchUserFavorites } from '../../utils/actions';
 import { Product } from '@prisma/client';
 
 type Favorite = {

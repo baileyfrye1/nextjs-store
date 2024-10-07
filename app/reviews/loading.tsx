@@ -1,7 +1,7 @@
 'use client';
 
-import { Card, CardHeader } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Card, CardHeader } from '^/components/ui/card';
+import { Skeleton } from '^/components/ui/skeleton';
 
 const loading = () => {
   return (

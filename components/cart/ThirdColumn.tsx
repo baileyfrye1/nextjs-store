@@ -4,7 +4,7 @@ import SelectProductAmount from '../single-product/SelectProductAmount';
 import { Mode } from '../single-product/SelectProductAmount';
 import FormContainer from '../form/FormContainer';
 import { SubmitButton } from '../form/Buttons';
-import { removeCartItemAction, updateCartItemAction } from '@/utils/actions';
+import { removeCartItemAction, updateCartItemAction } from '^/utils/actions';
 import { useToast } from '../ui/use-toast';
 
 function ThirdColumn({ quantity, id }: { quantity: number; id: string }) {

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/navbar/Navbar';
-import Container from '@/components/global/Container';
+import Navbar from '^/components/navbar/Navbar';
+import Container from '^/components/global/Container';
 import Providers from './providers';
 import { ClerkProvider } from '@clerk/nextjs';
 
