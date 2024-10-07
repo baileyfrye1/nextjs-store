@@ -1,5 +1,5 @@
-import { cn } from '^/lib/utils';
-import { fetchProductRating } from '^/utils/actions';
+import { cn } from '@/lib/utils';
+import { fetchProductRating } from '@/utils/actions';
 import { FaStar } from 'react-icons/fa';
 
 const ProductRating = async ({

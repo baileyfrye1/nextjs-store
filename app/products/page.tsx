@@ -1,4 +1,4 @@
-import ProductsContainer from '^/components/products/ProductsContainer';
+import ProductsContainer from '@/components/products/ProductsContainer';
 
 const ProductsPage = ({
   searchParams,

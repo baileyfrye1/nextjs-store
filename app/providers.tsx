@@ -1,6 +1,6 @@
 'use client';
 import { ThemeProvider } from './theme-provider';
-import { Toaster } from '^/components/ui/toaster';
+import { Toaster } from '@/components/ui/toaster';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (

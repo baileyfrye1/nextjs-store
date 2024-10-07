@@ -1,12 +1,12 @@
-import { SubmitButton } from '^/components/form/Buttons';
-import CheckBoxInput from '^/components/form/CheckBoxInput';
-import FormContainer from '^/components/form/FormContainer';
-import FormInput from '^/components/form/FormInput';
-import ImageInput from '^/components/form/ImageInput';
-import PriceInput from '^/components/form/PriceInput';
-import TextAreaInput from '^/components/form/TextAreaInput';
-import { Button } from '^/components/ui/button';
-import { createProductAction } from '^/utils/actions';
+import { SubmitButton } from '@/components/form/Buttons';
+import CheckBoxInput from '@/components/form/CheckBoxInput';
+import FormContainer from '@/components/form/FormContainer';
+import FormInput from '@/components/form/FormInput';
+import ImageInput from '@/components/form/ImageInput';
+import PriceInput from '@/components/form/PriceInput';
+import TextAreaInput from '@/components/form/TextAreaInput';
+import { Button } from '@/components/ui/button';
+import { createProductAction } from '@/utils/actions';
 import { faker } from '@faker-js/faker';
 
 const CreateProductPage = () => {

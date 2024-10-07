@@ -1,7 +1,7 @@
 import { Card, CardTitle } from '../ui/card';
 import { Separator } from '../ui/separator';
-import { formatCurrency } from '^/utils/format';
-import { createOrderAction } from '^/utils/actions';
+import { formatCurrency } from '@/utils/format';
+import { createOrderAction } from '@/utils/actions';
 import FormContainer from '../form/FormContainer';
 import { SubmitButton } from '../form/Buttons';
 import { Cart } from '@prisma/client';

@@ -2,7 +2,7 @@
 import { Card } from '../ui/card';
 import { FirstColumn, SecondColumn, FourthColumn } from './CartItemColumns';
 import ThirdColumn from './ThirdColumn';
-import { CartItemWithProduct } from '^/utils/types';
+import { CartItemWithProduct } from '@/utils/types';
 
 const CartItemsList = ({ cartItems }: { cartItems: CartItemWithProduct[] }) => {
   return (

@@ -1,6 +1,6 @@
 'use server';
 
-import db from '^/utils/db';
+import db from '@/utils/db';
 import { auth, currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
 import {

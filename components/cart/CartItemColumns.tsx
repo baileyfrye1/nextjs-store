@@ -1,4 +1,4 @@
-import { formatCurrency } from '^/utils/format';
+import { formatCurrency } from '@/utils/format';
 import Image from 'next/image';
 import Link from 'next/link';
 

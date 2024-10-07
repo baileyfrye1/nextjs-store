@@ -1,8 +1,8 @@
-import EmptyList from '^/components/global/EmptyList';
-import { deleteProductAction, fetchAdminProducts } from '^/utils/actions';
+import EmptyList from '@/components/global/EmptyList';
+import { deleteProductAction, fetchAdminProducts } from '@/utils/actions';
 import Link from 'next/link';
 
-import { formatCurrency } from '^/utils/format';
+import { formatCurrency } from '@/utils/format';
 import {
   Table,
   TableBody,
@@ -11,9 +11,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '^/components/ui/table';
-import { IconButton } from '^/components/form/Buttons';
-import FormContainer from '^/components/form/FormContainer';
+} from '@/components/ui/table';
+import { IconButton } from '@/components/form/Buttons';
+import FormContainer from '@/components/form/FormContainer';
 
 type ProductItem = {
   id: string;
