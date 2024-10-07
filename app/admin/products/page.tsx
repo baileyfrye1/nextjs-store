@@ -15,6 +15,19 @@ import {
 import { IconButton } from '@/components/form/Buttons';
 import FormContainer from '@/components/form/FormContainer';
 
+type ProductItem = {
+  id: string;
+  name: string;
+  company: string;
+  description: string;
+  featured: boolean;
+  image: string;
+  price: number;
+  createdAt: Date;
+  updatedAt: Date;
+  clerkId: string;
+};
+
 const AdminProductsPage = async () => {
   const items = await fetchAdminProducts();
   if (items.length === 0) return <EmptyList />;
@@ -34,7 +47,7 @@ const AdminProductsPage = async () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {items.map((item) => {
+          {items.map((item: ProductItem) => {
             const { id: productId, name, company, price } = item;
             return (
               <TableRow key={productId}>
