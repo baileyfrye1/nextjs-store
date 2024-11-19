@@ -30,7 +30,7 @@ const renderError = (error: unknown): { message: string } => {
   return { message: error instanceof Error ? error.message : 'An error' };
 };
 
-export const fetchFeaturedProducts = () => {
+export const fetchFeaturedProducts = async () => {
   return db.product.findMany({
     where: {
       featured: true,
@@ -38,7 +38,7 @@ export const fetchFeaturedProducts = () => {
   });
 };
 
-export const fetchAllProducts = ({ search = '' }: { search: string }) => {
+export const fetchAllProducts = async ({ search = '' }: { search: string }) => {
   return db.product.findMany({
     where: {
       OR: [
@@ -64,7 +64,7 @@ export const fetchSingleProduct = async (productId: string) => {
 
 export const createProductAction = async (
   prevState: any,
-  formData: FormData,
+  formData: FormData
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
   try {
@@ -127,7 +127,7 @@ export const fetchAdminProductDetails = async (productId: string) => {
 
 export const updateProductAction = async (
   prevState: any,
-  formData: FormData,
+  formData: FormData
 ) => {
   await getAdminUser();
   try {
@@ -152,7 +152,7 @@ export const updateProductAction = async (
 
 export const updateProductImageAction = async (
   prevState: any,
-  formData: FormData,
+  formData: FormData
 ) => {
   await getAuthUser();
   try {
@@ -241,7 +241,7 @@ export const fetchUserFavorites = async () => {
 
 export const createReviewAction = async (
   prevState: any,
-  formData: FormData,
+  formData: FormData
 ) => {
   const user = await getAuthUser();
   try {
@@ -488,7 +488,7 @@ export const addToCartAction = async (prevState: any, formData: FormData) => {
 
 export const removeCartItemAction = async (
   prevState: any,
-  formData: FormData,
+  formData: FormData
 ) => {
   const user = await getAuthUser();
 
@@ -547,13 +547,25 @@ export const updateCartItemAction = async ({
 
 export const createOrderAction = async (prevState: any, formData: FormData) => {
   const user = await getAuthUser();
+  let orderId: null | string = null;
+  let cartId: null | string = null;
+
   try {
     const cart = await fetchOrCreateCart({
       userId: user.id,
       errorOnFailure: true,
     });
 
-    await db.order.create({
+    cartId = cart.id;
+
+    await db.order.deleteMany({
+      where: {
+        clerkId: user.id,
+        isPaid: false,
+      },
+    });
+
+    const order = await db.order.create({
       data: {
         clerkId: user.id,
         products: cart.numItemsInCart,
@@ -564,15 +576,11 @@ export const createOrderAction = async (prevState: any, formData: FormData) => {
       },
     });
 
-    await db.cart.delete({
-      where: {
-        id: cart.id,
-      },
-    });
+    orderId = order.id;
   } catch (error) {
     return renderError(error);
   }
-  redirect('/orders');
+  redirect(`/checkout?orderId=${orderId}&cartId=${cartId}`);
 };
 
 export const fetchUserOrders = async () => {
