@@ -35,7 +35,19 @@ export const POST = async (req: NextRequest) => {
   }
 
   // Line items
-  const line_items: StripeEmbeddedCheckoutLineItem[] = [];
+  const line_items = cart.cartItems.map((cartItem) => {
+    return {
+      quantity: cartItem.amount,
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: cartItem.product.name,
+          images: [cartItem.product.image],
+        },
+        unit_amount: cartItem.product.price * 100,
+      },
+    };
+  });
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -45,6 +57,8 @@ export const POST = async (req: NextRequest) => {
       mode: 'payment',
       return_url: `${origin}/api/confirm?session_id={CHECKOUT_SESSION_ID}`,
     });
+
+    return Response.json({ clientSecret: session.client_secret });
   } catch (error) {
     console.log(error);
     return Response.json(null, {

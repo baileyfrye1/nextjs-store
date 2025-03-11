@@ -8,13 +8,13 @@ import NavSearch from './NavSearch';
 
 const Navbar = () => {
   return (
-    <div className='border-b'>
-      <Container className='flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 flex-wrap py-8'>
+    <div className="border-b">
+      <Container className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 flex-wrap py-8">
         <Logo />
         <Suspense>
           <NavSearch />
         </Suspense>
-        <div className='flex gap-4 items-center'>
+        <div className="flex gap-4 items-center">
           <CartButton />
           <DarkMode />
           <LinksDropdown />

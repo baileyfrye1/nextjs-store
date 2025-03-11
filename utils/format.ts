@@ -8,6 +8,8 @@ export const formatCurrency = (amount: number | null) => {
 
 export const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('en-US', {
-  year: 'numeric', month: 'long', day: 'numeric'
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
   }).format(date);
-}
+};
